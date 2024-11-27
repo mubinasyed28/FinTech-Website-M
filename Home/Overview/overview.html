@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #6bc6d0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .team-member {
+            background-color: #0788be;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            text-align: center;
+            width: 230px;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(50px); /* Initially off-screen vertically */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .team-member.visible {
+            opacity: 1;
+            transform: translateY(0); /* Move into view */
+        }
+
+        /* Additional frames: sliding from left or right */
+        .team-member-slide-left {
+            opacity: 0;
+            transform: translateX(-100px); /* Start from the left */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .team-member-slide-right {
+            opacity: 0;
+            transform: translateX(100px); /* Start from the right */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .team-member-slide-left.visible,
+        .team-member-slide-right.visible {
+            opacity: 1;
+            transform: translateX(0); /* Move into view */
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member img:hover {
+            transform: scale(1.1); /* Zoom in on hover */
+        }
+
+        .team-member h3 {
+            margin: 10px 0 5px;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .team-member p {
+            margin: 0;
+            font-size: 16px;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        .icons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .icons a img {
+            width: 25px;
+            height: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .icons a img:hover {
+            transform: scale(1.2); /* Zoom in on hover */
+        }
+
+        .team-group {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        .team-group h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .team-member-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="team-container">
+        <div class="team-member">
+            <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rahul AR">
+            <h3>Manvith Shetty</h3>
+            <p>General Secretary</p>
+            <div class="icons">
+                <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+            </div>
+        </div>
+        <div class="team-member team-member-slide-left">
+            <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ansh Vashisht">
+            <h3>Sayali Chavan</h3>
+            <p>Chairperson</p>
+            <div class="icons">
+                <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+            </div>
+        </div>
+        <div class="team-member team-member-slide-right">
+            <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cleton Chris Dsouza">
+            <h3>Krrish Wasan</h3>
+            <p>Vice Chairperson</p>
+            <div class="icons">
+                <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+            </div>
+        </div>
+        <div class="team-member team-member-slide-left">
+            <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Saad Mughal">
+            <h3>Shashank Deshmukh</h3>
+            <p>Member</p>
+            <div class="icons">
+                <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+            </div>
+        </div>
+
+        <!-- Additional frames (grouped and segregated into two sections) -->
+
+        <!-- First Group Section -->
+        <div class="team-group">
+            <h2>Technical Heads</h2>
+            <div class="team-member-container">
+                <div class="team-member team-member-slide-right">
+                    <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tanmay Upadhyay">
+                    <h3>Priyanka Verma</h3>
+                    <p>Member</p>
+                    <div class="icons">
+                        <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                        <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+                    </div>
+                </div>
+
+                <div class="team-member team-member-slide-left">
+                    <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lucas Silva">
+                    <h3>Ritu Yadav</h3>
+                    <p>Member</p>
+                    <div class="icons">
+                        <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                        <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Group Section -->
+        <div class="team-group">
+            <h2>Event Heads</h2>
+            <div class="team-member-container">
+                <div class="team-member team-member-slide-right">
+                    <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tanmay Upadhyay">
+                    <h3>Priyanka Verma</h3>
+                    <p>Member</p>
+                    <div class="icons">
+                        <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                        <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+                    </div>
+                </div>
+
+                <div class="team-member team-member-slide-left">
+                    <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lucas Silva">
+                    <h3>Ritu Yadav</h3>
+                    <p>Member</p>
+                    <div class="icons">
+                        <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                        <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-group">
+            <h2>Publicity Heads</h2>
+            <div class="team-member-container">
+                <div class="team-member team-member-slide-right">
+                    <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tanmay Upadhyay">
+                    <h3>Priyanka Verma</h3>
+                    <p>Member</p>
+                    <div class="icons">
+                        <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                        <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+                    </div>
+                </div>
+
+                <div class="team-member team-member-slide-left">
+                    <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lucas Silva">
+                    <h3>Ritu Yadav</h3>
+                    <p>Member</p>
+                    <div class="icons">
+                        <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                        <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-group">
+            <h2>Creative Heads</h2>
+            <div class="team-member-container">
+                <div class="team-member team-member-slide-right">
+                    <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tanmay Upadhyay">
+                    <h3>Priyanka Verma</h3>
+                    <p>Member</p>
+                    <div class="icons">
+                        <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                        <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+                    </div>
+                </div>
+
+                <div class="team-member team-member-slide-left">
+                    <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lucas Silva">
+                    <h3>Ritu Yadav</h3>
+                    <p>Member</p>
+                    <div class="icons">
+                        <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                        <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-group">
+            <h2>Documentation Heads</h2>
+            <div class="team-member-container">
+                <div class="team-member team-member-slide-right">
+                    <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tanmay Upadhyay">
+                    <h3>Priyanka Verma</h3>
+                    <p>Member</p>
+                    <div class="icons">
+                        <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                        <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+                    </div>
+                </div>
+
+                <div class="team-member team-member-slide-left">
+                    <img src="https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lucas Silva">
+                    <h3>Ritu Yadav</h3>
+                    <p>Member</p>
+                    <div class="icons">
+                        <a href="#"><img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="LinkedIn"></a>
+                        <a href="#"><img src="https://plus.unsplash.com/premium_photo-1669077046748-6eabc790b495?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GitHub"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Set up IntersectionObserver to trigger animation when the team member enters the viewport
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once the member has entered view
+                }
+            });
+        }, {
+            threshold: 0.5 // 50% of the element must be visible
+        });
+
+        // Observe each team member
+        document.querySelectorAll('.team-member').forEach(member => {
+            observer.observe(member);
+        });
+
+        // Observe additional team members that slide from left or right
+        document.querySelectorAll('.team-member-slide-left, .team-member-slide-right').forEach(member => {
+            observer.observe(member);
+        });
+    </script>
+</body>
+</html>
